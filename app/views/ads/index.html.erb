@@ -1,0 +1,7 @@
+<% @ads.each do |ad| %>
+
+  <div class="ad">
+    <%= link_to ad.title, ad_path(ad) %>
+  </div>
+
+<% end %>

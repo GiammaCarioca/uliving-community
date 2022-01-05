@@ -1,0 +1,14 @@
+<h1><%= @ad.title %></h1>
+
+<div class="studio">
+  Studio <%= @ad.studio %>
+</div>
+
+<div clas="body">
+  <%= simple_format @ad.body %>
+</div>
+
+<div class="actions">
+  <%= link_to "Delete this ad", ad_path(@ad), method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to "Edit this ad", edit_ad_path(@ad) %>
+</div>
