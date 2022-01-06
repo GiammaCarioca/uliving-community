@@ -6,8 +6,18 @@
   Studio <%= @ad.studio %>
 </div>
 
-<div clas="body">
+<div class="body">
   <%= simple_format @ad.body %>
+</div>
+
+<% if @ad.phone_number.present? %>
+  <div class="phone_number">
+    Phone number: <%= @ad.phone_number %>
+  </div>
+<% end %>
+
+<div class="updated_at">
+  <%= @ad.updated_at %>
 </div>
 
 <div class="actions">
