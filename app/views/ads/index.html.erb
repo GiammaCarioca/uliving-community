@@ -1,7 +1,6 @@
 <% content_for :page_title, "Homepage" %>
 
 <nav class="filters">
-  <!-- filter feat yet to be done -->
   <%= active_link_to "All Ads", root_path, active: { category: nil } %>
   <%= active_link_to "Requests", root_path(category: "request"), active: { category: "request" } %>
   <%= active_link_to "Offers", root_path(category: "offer"), active: { category: "offer" } %>
@@ -10,7 +9,12 @@
 <% @ads.each do |ad| %>
 
   <div class="ad">
-    <%= link_to ad.title, ad_path(ad) %>
+    <%= link_to ad_path(ad) do %>
+      <h2><%= ad.title %></h2>
+      <p>
+        <%= pluralize ad.comments.count, "comment" %>
+      </p>
+    <% end %>
   </div>
 
 <% end %>
