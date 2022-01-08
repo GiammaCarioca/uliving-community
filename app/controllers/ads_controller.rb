@@ -2,11 +2,11 @@ class AdsController < ApplicationController
 
   def index
 
-    @is_request = params[:request]
+    @category = params[:category]
 
-    if @is_request.present?
-      #filter by type (request or offer)
-      # @ads = Ad.where(type: @is_request)
+    if @category.present?
+      #filter by category (request or offer)
+      @ads = Ad.where(category: @category)
     else
       @ads = Ad.all
     end
@@ -57,7 +57,7 @@ class AdsController < ApplicationController
   end
 
   def form_params
-    params.require(:ad).permit(:title, :body, :studio, :phone_number)
+    params.require(:ad).permit(:title, :body, :studio, :category, :phone_number)
   end
 
 end

@@ -2,6 +2,12 @@
 
 <h1><%= @ad.title %></h1>
 
+<% if @ad.category.present? %>
+  <div class="category">
+    Category: <%= @ad.category %>
+  </div>
+<% end %>
+
 <div class="studio">
   Studio <%= @ad.studio %>
 </div>

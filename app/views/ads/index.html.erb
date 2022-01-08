@@ -1,12 +1,13 @@
 <% content_for :page_title, "Homepage" %>
 
-<% @ads.each do |ad| %>
-
 <nav class="filters">
-  <%= link_to "All Ads", root_path %>
-  <!-- <%= link_to "Requests", root_path(type: 1) %> -->
-  <!-- <%= link_to "Offers", root_path(type: 2) %> -->
+  <!-- filter feat yet to be done -->
+  <%= active_link_to "All Ads", root_path, active: { category: nil } %>
+  <%= active_link_to "Requests", root_path(category: "request"), active: { category: "request" } %>
+  <%= active_link_to "Offers", root_path(category: "offer"), active: { category: "offer" } %>
 </nav>
+
+<% @ads.each do |ad| %>
 
   <div class="ad">
     <%= link_to ad.title, ad_path(ad) %>
