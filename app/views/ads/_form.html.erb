@@ -1,39 +1,10 @@
-<%= form_for @ad do |f| %>
+<%= simple_form_for @ad do |f| %>
 
-  <% if @ad.errors.any? %>
+  <%= f.input :title %>
+  <%= f.input :body %>
+  <%= f.input :studio %>
+  <%= f.input :phone_number %>
 
-    <div class="errors">
-      
-      <% @ad.errors.full_messages.each do |message| %>
-
-        <p><%= message %></p>
-        
-      <% end %>
-
-    </div>
-
-  <% end %>
-
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </p>
-
-  <p>
-    <%= f.label :studio %>
-    <%= f.number_field :studio %>
-  </p>
-
-  <p>
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %>
-  </p>
-
-  <%= f.submit "Save ad" %>
+  <%= f.button :submit, "Save ad" %>
 
 <% end %>

@@ -1,7 +1,16 @@
 class AdsController < ApplicationController
 
   def index
-    @ads = Ad.all
+
+    @is_request = params[:request]
+
+    if @is_request.present?
+      #filter by type (request or offer)
+      # @ads = Ad.where(type: @is_request)
+    else
+      @ads = Ad.all
+    end
+
   end
 
   def new

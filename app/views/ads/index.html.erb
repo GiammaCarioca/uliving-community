@@ -1,4 +1,12 @@
+<% content_for :page_title, "Homepage" %>
+
 <% @ads.each do |ad| %>
+
+<nav class="filters">
+  <%= link_to "All Ads", root_path %>
+  <!-- <%= link_to "Requests", root_path(type: 1) %> -->
+  <!-- <%= link_to "Offers", root_path(type: 2) %> -->
+</nav>
 
   <div class="ad">
     <%= link_to ad.title, ad_path(ad) %>
