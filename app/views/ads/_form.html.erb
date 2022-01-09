@@ -5,7 +5,7 @@
   <%= f.input :title %>
   <%= f.input :body %>
   <%= f.input :name %>
-  <%= f.input :studio %>
+  <%= f.input :studio, input_html: { min: 200, max: 1235 } %>
   <!-- <%= f.input :phone_number %> -->
 
   <%= f.button :submit, "Save ad" %>
