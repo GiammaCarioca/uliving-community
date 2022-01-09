@@ -91,8 +91,9 @@ label {
 
 input,
 textarea {
+	width: 50%;
 	font-size: 18px;
-	min-width: 400px;
+	// min-width: 400px;
 	border: 1px solid #cccccc;
 	padding: 7px 10px;
 	font-family: inherit;
@@ -168,8 +169,10 @@ nav.filters {
 }
 
 .comment {
+	color: $black;
 	font-size: 14px;
 	border-bottom: 2px solid $orange;
+	width: 50%;
 
 	p.posted {
 		color: #999999;
@@ -197,7 +200,34 @@ h3 {
 	}
 }
 
+.updated_at {
+	opacity: 0.75;
+}
+
+.actions {
+	margin-top: 20px;
+
+	a {
+		color: $orange;
+		background-color: transparent;
+		text-decoration: none;
+		padding: 6px 26px;
+		border-radius: 6px;
+		border: solid 2px $orange;
+	}
+
+	a:hover {
+		color: $white;
+		background-color: $orange;
+	}
+}
+
 @media screen and (max-width: 900px) {
+	input,
+	textarea {
+		width: 100%;
+	}
+
 	header {
 		padding-top: 12px;
 		padding-bottom: 12px;
@@ -224,5 +254,15 @@ h3 {
 		a {
 			margin: 0 12px 0 0;
 		}
+	}
+
+	.ad {
+		.textarea {
+			width: 100%;
+		}
+	}
+
+	.comment {
+		width: 100%;
 	}
 }

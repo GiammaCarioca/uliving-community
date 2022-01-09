@@ -55,7 +55,7 @@
 
 <%= simple_form_for [@ad, Comment.new] do |f| %>
 
-  <%= f.input :body %>
+  <%= f.input :body, label: "Your comment" %>
   <%= f.button :submit, "Add comment" %>
 
 <% end %>
