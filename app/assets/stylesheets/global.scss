@@ -93,7 +93,6 @@ input,
 textarea {
 	width: 50%;
 	font-size: 18px;
-	// min-width: 400px;
 	border: 1px solid #cccccc;
 	padding: 7px 10px;
 	font-family: inherit;
@@ -149,7 +148,8 @@ nav.filters {
 	}
 
 	.textarea {
-		background-color: $orange;
+		background-color: lighten($orange, 40%);
+		font-size: 1.4rem;
 		width: 50%;
 		min-height: 200px;
 		padding: 5px 20px;
