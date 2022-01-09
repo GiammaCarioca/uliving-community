@@ -266,3 +266,12 @@ h3 {
 		width: 100%;
 	}
 }
+
+@media screen and (max-width: 400px) {
+	.actions {
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
+		text-align: center;
+	}
+}
