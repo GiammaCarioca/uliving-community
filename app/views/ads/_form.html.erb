@@ -1,13 +1,18 @@
 <%= simple_form_for @ad do |f| %>
 
-  <%= f.input :category, :as => :select,
-    :collection =>  [['Estou procurando/ Quero aprender', :request], ['Ofereço/ Ensino', :offer]] %>
-  <%= f.input :title %>
-  <%= f.input :body %>
-  <%= f.input :name %>
-  <%= f.input :studio, input_html: { min: 200, max: 1235 } %>
-  <!-- <%= f.input :phone_number %> -->
+  <div class="ad-user-info">
+    <%= f.input :name, label: "Your name" %>
+    <%= f.input :studio, label: "Your studio", input_html: { min: 200, max: 1235 } %>
+  </div>
 
-  <%= f.button :submit, "Save ad" %>
+  <div class="ad-info">
+    <%= f.input :category, label: "Pick a category", :as => :select,
+      :collection =>  [['Looking for/ I wanna learn', :request], ['I\'m offering/ I can teach you', :offer]] %>
+    <%= f.input :title %>
+    <%= f.input :body, label: "Your message" %>
+    <!-- <%= f.input :phone_number %> -->
+  </div>
+
+  <%= f.button :submit, "Save your ad" %>
 
 <% end %>

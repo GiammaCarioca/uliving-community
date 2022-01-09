@@ -50,7 +50,7 @@ header {
 		margin: 0;
 
 		img {
-			width: 200px;
+			width: 180px;
 		}
 	}
 
@@ -172,5 +172,44 @@ nav.filters {
 	p.posted {
 		color: #999999;
 		font-size: 12px;
+	}
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+.ad-user-info {
+	margin-bottom: 20px;
+
+	label {
+		margin-top: 8px;
+	}
+}
+
+.ad-info {
+	margin: 20px 0;
+
+	label {
+		margin-top: 8px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	header {
+		h1 {
+			img {
+				width: 180px;
+			}
+		}
+
+		h2 {
+			font-size: 1.4rem;
+			display: none;
+		}
+
+		nav a {
+			padding: 4px 12px;
+		}
 	}
 }
