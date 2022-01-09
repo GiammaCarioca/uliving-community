@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Serif|Work+Sans');
 
 $orange: #ee6a00;
-$lightyellow: #ffeccf;
 $black: #1e1e1e;
 $white: #f1f1f1;
 
@@ -28,7 +27,10 @@ h5 {
 	font-family: $titleFont;
 }
 
-header,
+header {
+	padding: 0 30px;
+}
+
 main,
 footer {
 	padding: 20px 30px 20px 30px;
@@ -52,11 +54,15 @@ header {
 		}
 	}
 
+	h2 {
+		font-size: 3rem;
+	}
+
 	nav a {
 		color: $orange;
 		background-color: transparent;
 		text-decoration: none;
-		padding: 6px 8px;
+		padding: 6px 26px;
 		border-radius: 6px;
 		border: solid 2px $orange;
 	}
