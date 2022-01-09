@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Serif|Work+Sans');
 
-$green: #3bc8aa;
-$orange: #ff551a;
-$black: #1e1e1e;
+$orange: #ee6a00;
 $lightyellow: #ffeccf;
+$black: #1e1e1e;
+$white: #f1f1f1;
 
 $titleFont: 'PT Serif';
 $bodyFont: 'Work Sans';
@@ -13,7 +13,7 @@ $bodyFont: 'Work Sans';
 }
 
 body {
-	color: $black;
+	color: $orange;
 	font-family: $bodyFont;
 	font-size: 18px;
 	line-height: 1.5;
@@ -35,11 +35,11 @@ footer {
 }
 
 a {
-	color: $green;
+	color: $black;
 }
 
 header {
-	background: $lightyellow;
+	background: $black;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -48,8 +48,22 @@ header {
 		margin: 0;
 
 		img {
-			width: 80px;
+			width: 200px;
 		}
+	}
+
+	nav a {
+		color: $orange;
+		background-color: transparent;
+		text-decoration: none;
+		padding: 6px 8px;
+		border-radius: 6px;
+		border: solid 2px $orange;
+	}
+
+	nav a:hover {
+		color: $white;
+		background-color: $orange;
 	}
 }
 
@@ -59,7 +73,8 @@ main {
 
 footer {
 	font-size: 14px;
-	color: #999999;
+	color: $orange;
+	text-align: center;
 }
 
 label {
@@ -77,7 +92,7 @@ textarea {
 
 input[type='submit'] {
 	background: $orange;
-	color: white;
+	color: $white;
 	border-color: $orange;
 }
 
@@ -88,19 +103,19 @@ textarea {
 nav.filters {
 	margin: 0 0 20px 0;
 	padding: 0 0 10px 0;
-	font-size: 14px;
-	border-bottom: 2px solid $lightyellow;
+	font-size: 24px;
+	border-bottom: 2px solid $orange;
 
 	display: flex;
 	align-items: center;
 
 	a {
-		margin: 0 5px 0 0;
+		margin: 0 26px 0 0;
 		text-decoration: none;
 		color: $black;
 
 		&.active {
-			color: $green;
+			color: $orange;
 		}
 	}
 
@@ -116,9 +131,37 @@ nav.filters {
 	}
 }
 
+.ad {
+	color: $black;
+
+	.name {
+		font-size: 1.4rem;
+		font-weight: 900;
+	}
+
+	.textarea {
+		background-color: $orange;
+		width: 50%;
+		min-height: 200px;
+		padding: 5px 20px;
+		margin: 10px 0;
+	}
+}
+
+.ad-item {
+	p {
+		margin-top: -20px;
+		opacity: 0.75;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
 .comment {
 	font-size: 14px;
-	border-bottom: 2px solid $lightyellow;
+	border-bottom: 2px solid $orange;
 
 	p.posted {
 		color: #999999;

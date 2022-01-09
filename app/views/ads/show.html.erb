@@ -10,17 +10,18 @@
 <% end %>
 -->
 
-<div class="name">
-  Hi! I'm <%= @ad.name %>
-</div>
+<div class="ad">
+  <div class="name">
+    Hi! I'm <%= @ad.name %>
+  </div>
 
-<div class="studio">
-  From studio <%= @ad.studio %>
-</div>
+  <div class="studio">
+    From studio <%= @ad.studio %>
+  </div>
 
-<div class="body">
-  <%= simple_format @ad.body %>
-</div>
+  <div class="textarea">
+    <%= simple_format @ad.body %>
+  </div>
 
 <!--
 <% if @ad.phone_number.present? %>
@@ -32,7 +33,7 @@
 
 <div class="updated_at">
   Published on <%= @ad.updated_at.strftime("%d %B, %Y %I:%M%p") %>
-
+</div>
 </div>
 
 <div class="actions">
