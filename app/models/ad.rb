@@ -5,6 +5,8 @@ class Ad < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true, length: { minimum: 10 }
+  validates :category, presence: true
+  validates :name, presence: true
   validates :studio, numericality: { only_integer: true }
 
   def to_param

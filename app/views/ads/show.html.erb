@@ -2,28 +2,37 @@
 
 <h1><%= @ad.title %></h1>
 
+<!--
 <% if @ad.category.present? %>
   <div class="category">
     Category: <%= @ad.category %>
   </div>
 <% end %>
+-->
+
+<div class="name">
+  Hi! I'm <%= @ad.name %>
+</div>
 
 <div class="studio">
-  Studio <%= @ad.studio %>
+  From studio <%= @ad.studio %>
 </div>
 
 <div class="body">
   <%= simple_format @ad.body %>
 </div>
 
+<!--
 <% if @ad.phone_number.present? %>
   <div class="phone_number">
-    Phone number: <%= @ad.phone_number %>
+    My phone number is: <%= @ad.phone_number %>
   </div>
 <% end %>
+-->
 
 <div class="updated_at">
-  <%= @ad.updated_at %>
+  Published on <%= @ad.updated_at.strftime("%d %B, %Y %I:%M%p") %>
+
 </div>
 
 <div class="actions">

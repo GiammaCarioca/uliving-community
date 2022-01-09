@@ -1,10 +1,12 @@
 <%= simple_form_for @ad do |f| %>
 
+  <%= f.input :category, :as => :select,
+    :collection =>  [['Estou procurando/ Quero aprender', :request], ['Ofereço/ Ensino', :offer]] %>
   <%= f.input :title %>
   <%= f.input :body %>
+  <%= f.input :name %>
   <%= f.input :studio %>
-  <%= f.input :category %>
-  <%= f.input :phone_number %>
+  <!-- <%= f.input :phone_number %> -->
 
   <%= f.button :submit, "Save ad" %>
 
