@@ -1,6 +1,7 @@
 <%= simple_form_for @ad do |f| %>
 
   <div class="ad-user-info">
+    <!-- hidden field name with value equal to @current_user.username -->
     <%= f.input :name, label: "Your name" %>
     <%= f.input :studio, label: "Your studio", input_html: { min: 200, max: 1235 } %>
   </div>
