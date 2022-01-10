@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_10_182004) do
+ActiveRecord::Schema.define(version: 2022_01_10_203442) do
 
   create_table "ads", force: :cascade do |t|
     t.string "title"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2022_01_10_182004) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "phone_number"
     t.string "category"
-    t.string "name"
     t.integer "user_id"
   end
 
