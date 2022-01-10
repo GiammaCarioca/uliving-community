@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :sessions
+  resource :session
 
   root "ads#index"
 
