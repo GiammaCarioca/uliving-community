@@ -39,22 +39,35 @@ class AdsController < ApplicationController
   def destroy
     @ad = Ad.find(params[:id])
 
-    @ad.destroy
+    # destroy if they have access
+    if @ad.user == @current_user
+      @ad.destroy
+    end
 
+    # redirect to the home page
     redirect_to root_path
   end
 
   def edit
     @ad = Ad.find(params[:id])
+
+    if @ad.user != @current_user
+      redirect_to root_path
+    end
+
   end
 
   def update
     @ad = Ad.find(params[:id])
 
-    if @ad.update(form_params)
-      redirect_to ad_path(@ad)
+    if @ad.user != @current_user
+      redirect_to root_path
     else
-      render "edit"
+      if @ad.update(form_params)
+        redirect_to ad_path(@ad)
+      else
+        render "edit"
+      end
     end
 
   end
