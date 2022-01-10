@@ -282,4 +282,17 @@ h3 {
 	.show-ad-title {
 		font-size: 1.4rem;
 	}
+
+	.nav-actions {
+		display: flex;
+		flex-direction: column;
+		padding: 4px 8px;
+		gap: 6px;
+		font-size: 1rem;
+		text-align: center;
+	}
+
+	.hi {
+		display: none;
+	}
 }

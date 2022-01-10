@@ -21,18 +21,22 @@
 
       <h2>Bulletin Board</h2>
       
-      <nav>
+      <div>
         <% if is_logged_in? %>
 
-          <%= @current_user.username %>
+          <div class="hi">
+            Hi, <%= @current_user.username %>
+          </div>
 
-          <%= link_to "Create your ad", new_ad_path %>
+        <nav class="nav-actions">
+          <%= link_to "Create new ad", new_ad_path %>
           <%= link_to "Log out", session_path, method: :delete %>
 
         <% else %>
 
           <%= link_to "Sign up", new_user_path %>
           <%= link_to "Log in", new_session_path %>
+        </nav>
 
         <% end %>
 
