@@ -6,6 +6,8 @@ class CommentsController < ApplicationController
 
     @comment = @ad.comments.new(params.require(:comment).permit(:body))
 
+    @comment.user = @current_user
+
     @comment.save
 
     # go back to the ad show page

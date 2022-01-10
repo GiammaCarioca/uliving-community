@@ -20,6 +20,9 @@ class AdsController < ApplicationController
   def create
     @ad = Ad.new(form_params)
 
+    # and then associate it with a user
+    @ad.user = @current_user
+
     if @ad.save
       redirect_to root_path
     else
