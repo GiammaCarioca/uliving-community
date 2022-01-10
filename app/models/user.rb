@@ -1,5 +1,8 @@
 class User < ApplicationRecord
 
+  has_many :ads
+  has_many :comments
+
   has_secure_password
 
   validates :username, presence: true, uniqueness: true
