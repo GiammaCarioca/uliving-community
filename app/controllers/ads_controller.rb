@@ -60,7 +60,7 @@ class AdsController < ApplicationController
   end
 
   def form_params
-    params.require(:ad).permit(:name, :title, :body, :studio, :category, :phone_number)
+    params.require(:ad).permit(:title, :body, :studio, :category)
   end
 
 end

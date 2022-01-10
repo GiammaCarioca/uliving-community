@@ -11,8 +11,21 @@
 -->
 
 <div class="ad">
+  <!--
   <div class="name">
     Hi! I'm <%= @ad.name %>
+  </div>
+  -->
+
+  <div class="user">
+    Hi! I'm  
+    <% if @ad.user.present? %>
+
+      <%= link_to @ad.user.username, user_path(@ad.user) %>
+
+    <% else %>
+      anonymous
+    <% end %>
   </div>
 
   <div class="studio">
@@ -36,10 +49,12 @@
 </div>
 </div>
 
-<div class="actions">
-  <%= link_to "Delete this ad", ad_path(@ad), method: :delete, data: { confirm: "Are you sure?" } %>
-  <%= link_to "Edit this ad", edit_ad_path(@ad) %>
-</div>
+<% if @ad.user == @current_user %>
+  <div class="actions">
+    <%= link_to "Delete this ad", ad_path(@ad), method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= link_to "Edit this ad", edit_ad_path(@ad) %>
+  </div>
+<% end %>
 
 <h3>Comments</h3>
 
