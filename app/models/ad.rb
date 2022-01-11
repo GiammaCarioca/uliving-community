@@ -1,8 +1,8 @@
 class Ad < ApplicationRecord
 
   # add an association that has a 1-to-many relationship
-  has_many :comments
-  has_many :bookmarks
+  has_many :comments, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
 
   # add an association to the user
   belongs_to :user
