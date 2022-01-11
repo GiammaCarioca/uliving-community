@@ -28,7 +28,7 @@ h5 {
 }
 
 header {
-	padding: 0 30px;
+	padding: 0 32px;
 }
 
 main,
@@ -60,19 +60,32 @@ header {
 		font-size: 2.5rem;
 	}
 
-	nav a {
+	// button-like
+	.navbar a {
 		color: $orange;
 		background-color: transparent;
 		text-decoration: none;
-		padding: 6px 26px;
+		padding: 8px 16px;
 		border-radius: 6px;
 		border: solid 2px $orange;
+		font-size: 1rem;
 	}
 
-	nav a:hover {
+	.navbar a:hover {
 		color: $white;
 		background-color: $orange;
 	}
+}
+
+// button-like
+.bookmark > a {
+	color: $white;
+	background-color: $orange;
+	text-decoration: none;
+	padding: 6px 8px;
+	border-radius: 6px;
+	border: solid 2px $orange;
+	font-size: 1rem;
 }
 
 main {
@@ -98,10 +111,16 @@ textarea {
 	font-family: inherit;
 }
 
+// button-like
 input[type='submit'] {
 	background: $orange;
 	color: $white;
 	border-color: $orange;
+	margin-top: 20px;
+
+	&:hover {
+		filter: brightness(90%);
+	}
 }
 
 textarea {
@@ -141,6 +160,7 @@ nav.filters {
 
 .ad {
 	color: $black;
+	margin-top: 2rem;
 
 	.user {
 		font-size: 1.4rem;
@@ -184,17 +204,7 @@ h3 {
 	font-size: 2rem;
 }
 
-.ad-user-info {
-	margin-bottom: 20px;
-
-	label {
-		margin-top: 8px;
-	}
-}
-
 .ad-info {
-	margin: 20px 0;
-
 	label {
 		margin-top: 8px;
 	}
@@ -222,7 +232,7 @@ h3 {
 	}
 }
 
-.nav-main {
+nav {
 	display: flex;
 	gap: 20px;
 }
@@ -231,6 +241,10 @@ h3 {
 	input,
 	textarea {
 		width: 100%;
+	}
+
+	.username {
+		display: none;
 	}
 
 	header {
@@ -248,8 +262,8 @@ h3 {
 			display: none;
 		}
 
-		nav a {
-			padding: 4px 6px;
+		.navbar a {
+			padding: 4px 8px;
 		}
 	}
 
@@ -277,6 +291,10 @@ h3 {
 }
 
 @media screen and (max-width: 400px) {
+	header {
+		padding: 12px 12px;
+	}
+
 	.actions {
 		display: flex;
 		flex-direction: column;
@@ -290,14 +308,13 @@ h3 {
 
 	.nav-actions {
 		display: flex;
-		flex-direction: column;
 		padding: 4px 8px;
 		gap: 6px;
 		font-size: 1rem;
 		text-align: center;
 	}
 
-	.username {
-		display: none;
+	.nav-actions .logout {
+		flex-direction: column;
 	}
 }

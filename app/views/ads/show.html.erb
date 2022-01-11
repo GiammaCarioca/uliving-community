@@ -4,28 +4,20 @@
 
 <% if is_logged_in? %>
 
-  <p>
+  <div class="bookmark">
     <% if @ad.bookmarks.where(user: @current_user).any? %>
 
-      <%= link_to "Unbookmark", ad_bookmark_path(@ad), method: :delete %>
+      <%= link_to "unbookmark", ad_bookmark_path(@ad), method: :delete %>
 
     <% else %>
 
-      <%= link_to "Bookmark", ad_bookmark_path(@ad), method: :post %>
+      <%= link_to "bookmark", ad_bookmark_path(@ad), method: :post %>
 
     <% end %>
   </p>
 
 
 <% end %>
-
-<!--
-<% if @ad.category.present? %>
-  <div class="category">
-    Category: <%= @ad.category %>
-  </div>
-<% end %>
--->
 
 <div class="ad">
   <div class="user">

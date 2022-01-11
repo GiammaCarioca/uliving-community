@@ -1,14 +1,11 @@
 <%= simple_form_for @ad do |f| %>
 
-  <div class="ad-user-info">
-    <%= f.input :studio, label: "Your studio", input_html: { min: 200, max: 1235 } %>
-  </div>
-
   <div class="ad-info">
     <%= f.input :category, label: "Pick a category", :as => :select,
       :collection =>  [['Looking for/ I wanna learn', :request], ['I\'m offering/ I can teach you', :offer]] %>
     <%= f.input :title %>
     <%= f.input :body, label: "Your message" %>
+    <%= f.input :studio, label: "Your studio", input_html: { min: 200, max: 1235 } %>
     <!-- <%= f.input :phone_number %> -->
   </div>
 
