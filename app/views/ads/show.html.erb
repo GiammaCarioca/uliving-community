@@ -55,9 +55,18 @@
 <% end %>
 -->
 
-<div class="updated_at">
-  Published on <%= @ad.updated_at.strftime("%d %B, %Y %I:%M%p") %>
-</div>
+  <h3>Bookmarked by...</h3>
+
+  <ul>
+    <% @ad.bookmarks.each do |bookmark| %>
+      <li><%= bookmark.user.username %></li>
+    <% end %>
+  </ul>
+
+  <div class="updated_at">
+    Published on <%= @ad.updated_at.strftime("%d %B, %Y %I:%M%p") %>
+  </div>
+
 </div>
 
 <% if @ad.user == @current_user %>
