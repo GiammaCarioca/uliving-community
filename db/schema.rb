@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_10_203442) do
+ActiveRecord::Schema.define(version: 2022_01_11_143652) do
 
   create_table "ads", force: :cascade do |t|
     t.string "title"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2022_01_10_203442) do
     t.string "phone_number"
     t.string "category"
     t.integer "user_id"
+  end
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.integer "ad_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ad_id"], name: "index_bookmarks_on_ad_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -41,5 +50,7 @@ ActiveRecord::Schema.define(version: 2022_01_10_203442) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "bookmarks", "ads"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "comments", "ads"
 end
