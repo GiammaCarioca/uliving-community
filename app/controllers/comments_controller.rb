@@ -10,6 +10,8 @@ class CommentsController < ApplicationController
 
     @comment.save
 
+    flash[:success] = "Your comment was posted!"
+
     # go back to the ad show page
     redirect_to ad_path(@ad)
 

@@ -24,6 +24,8 @@ class AdsController < ApplicationController
     @ad.user = @current_user
 
     if @ad.save
+      flash[:success] = "Your ad was posted!"
+
       redirect_to root_path
     else
       # show the view for new.html.erb

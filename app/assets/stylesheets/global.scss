@@ -241,6 +241,12 @@ h3 {
 	}
 }
 
+.success {
+	background-color: $orange;
+	color: $white;
+	padding: 10px 30px;
+}
+
 @media screen and (max-width: 900px) {
 	input,
 	textarea {
