@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resource :session
 
+  resource :account
+
   root "ads#index"
 
 end
