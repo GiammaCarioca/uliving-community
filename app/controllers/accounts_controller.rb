@@ -19,7 +19,7 @@ class AccountsController < ApplicationController
   end
 
   def form_params
-    params.require(:user).permit(:username, :email)
+    params.require(:user).permit(:username, :email, :photo)
   end
 
 end

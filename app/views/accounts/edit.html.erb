@@ -5,6 +5,7 @@
 <%= simple_form_for @current_user, url: account_path do |f| %>
   <%= f.input :username %>
   <%= f.input :email %>
+  <%= f.input :photo %>
 
   <%= f.button :submit, "Update account" %>
 <% end %>
