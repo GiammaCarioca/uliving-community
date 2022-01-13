@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       # save the session with the user
       session[:user_id] = @user.id
 
-      flash[:success] = "Welcome to Uliving's Bulletin Board!"
+      flash[:success] = "Welcome to Uliving Rio's Bulletin Board!"
       
       redirect_to users_path
     else
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   end
 
   def form_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :phone_number, :studio_number, :password, :password_confirmation)
   end
 
 end

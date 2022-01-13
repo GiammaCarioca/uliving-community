@@ -19,7 +19,9 @@
         <% end %>
       </h1>
 
-      <h2>Bulletin Board</h2>
+      <% if not is_logged_in? %>
+        <h2>Bulletin Board</h2>
+      <% end %>
       
       <nav class="navbar">
         <% if is_logged_in? %>

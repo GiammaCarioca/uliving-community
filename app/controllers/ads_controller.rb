@@ -44,6 +44,8 @@ class AdsController < ApplicationController
     # destroy if they have access
     if @ad.user == @current_user
       @ad.destroy
+
+      flash[:success] = "Ad deleted successfully!"
     end
 
     # redirect to the home page
@@ -66,6 +68,8 @@ class AdsController < ApplicationController
       redirect_to root_path
     else
       if @ad.update(form_params)
+        flash[:success] = "Ad updated successfully!"
+
         redirect_to ad_path(@ad)
       else
         render "edit"
@@ -75,7 +79,7 @@ class AdsController < ApplicationController
   end
 
   def form_params
-    params.require(:ad).permit(:title, :body, :studio, :category)
+    params.require(:ad).permit(:title, :body, :category)
   end
 
 end

@@ -247,46 +247,36 @@ h3 {
 	padding: 10px 30px;
 }
 
-@media screen and (max-width: 900px) {
+.user-list-item h2  {
+	display: inline;
+}
+
+@media screen and (max-width: 1200px) {
+	header {
+		h2 {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) {
 	input,
 	textarea {
 		width: 100%;
+	}
+
+	header {
+		padding-top: 12px;
+		padding-bottom: 12px;
 	}
 
 	.username {
 		display: none;
 	}
 
-	header {
-		padding-top: 12px;
-		padding-bottom: 12px;
-
-		h1 {
-			img {
-				width: 110px;
-			}
-		}
-
-		.navbar a {
-			font-size: 1rem;
-		}
-
-		h2 {
-			font-size: 1.4rem;
-			display: none;
-		}
-
-		.navbar a {
-			padding: 4px 8px;
-		}
-	}
-
-	nav.filters {
-		font-size: 16px;
-
-		a {
-			margin: 0 12px 0 0;
-		}
+	.navbar a {
+		font-size: 1rem;
+		padding: 4px 8px;
 	}
 
 	.ad {
@@ -304,31 +294,41 @@ h3 {
 	}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
 	header {
-		padding: 12px 12px;
-	}
+		.login, .logout {
+			display: flex;
+			flex-direction: column;
+			row-gap: 6px;
+			text-align: center;
+		}
 
-	.actions {
-		display: flex;
-		flex-direction: column;
-		row-gap: 10px;
-		text-align: center;
+		// button-like
+		.navbar a {
+			padding: 4px 20px;
+			font-size: 1rem;
+		}
 	}
 
 	.show-ad-title {
 		font-size: 1.4rem;
 	}
+}
 
-	.nav-actions {
-		display: flex;
-		padding: 4px 8px;
-		gap: 6px;
-		font-size: 1rem;
-		text-align: center;
+@media screen and (max-width: 400px) {
+	header {
+		h1 {
+			img {
+				width: 120px;
+			}
+		}
 	}
 
-	.nav-actions .logout {
-		flex-direction: column;
+	nav.filters {
+		font-size: 16px;
+
+		a {
+			margin: 0 12px 0 0;
+		}
 	}
 }

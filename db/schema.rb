@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_13_015038) do
+ActiveRecord::Schema.define(version: 2022_01_13_205559) do
 
   create_table "ads", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "studio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "phone_number"
     t.string "category"
     t.integer "user_id"
   end
@@ -49,6 +47,8 @@ ActiveRecord::Schema.define(version: 2022_01_13_015038) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "photo"
+    t.string "studio_number"
+    t.string "phone_number"
   end
 
   add_foreign_key "bookmarks", "ads"

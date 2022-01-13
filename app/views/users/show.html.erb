@@ -2,6 +2,12 @@
 
 <%= image_tag @user.photo.medium.url %>
 
-<h2><%= @user.username %></h2>
+<div class="user-list-item">
+  <h2><%= @user.username %></h2>
+
+  <% if @user.studio_number.present? %>
+    <span>from studio <%= @user.studio_number %></span>
+  <% end %>
+</div>
 
 <p>Their email is <%= @user.email %></p>
