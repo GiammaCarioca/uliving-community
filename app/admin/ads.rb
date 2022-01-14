@@ -5,7 +5,7 @@ ActiveAdmin.register Ad do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :body, :category, :user_id
+  permit_params :title, :body, :category, :user_id, :is_featured
   #
   # or
   #
@@ -14,5 +14,5 @@ ActiveAdmin.register Ad do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end

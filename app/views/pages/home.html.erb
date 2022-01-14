@@ -1,0 +1,29 @@
+<% content_for :page_title, "Home" %>
+
+<% if @content.image.present? %>
+  <%= image_tag @content.image.url %>
+<% end %>
+
+<h1><%= @content.title %></h1>
+
+<%= simple_format @content.body %>
+
+<h2 class="featured">
+  <%= "Featured ads" %>
+  <%= render partial: "ad", collection: @featured_ads %>
+</h2>
+
+<h2 class="latest">
+  <%= "Latest ads from your community" %>
+  <%= render partial: "ad", collection: @latest_ads %>
+</h2>
+
+<!--
+<h2 class="bookmarks">
+  <%= "Your bookmarks" %>
+</h2>
+-->
+
+<p class="more-ads">
+  <%= link_to "See all the ads", ads_path %>
+</p>

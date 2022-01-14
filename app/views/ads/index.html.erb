@@ -1,9 +1,9 @@
 <% content_for :page_title, "Homepage" %>
 
 <nav class="filters">
-  <%= active_link_to "All Ads", root_path, active: { category: nil } %>
-  <%= active_link_to "Requests", root_path(category: "request"), active: { category: "request" } %>
-  <%= active_link_to "Offers", root_path(category: "offer"), active: { category: "offer" } %>
+  <%= active_link_to "All Ads", ads_path, active: { category: nil } %>
+  <%= active_link_to "Requests", ads_path(category: "request"), active: { category: "request" } %>
+  <%= active_link_to "Offers", ads_path(category: "offer"), active: { category: "offer" } %>
 </nav>
 
 <% @ads.each do |ad| %>
