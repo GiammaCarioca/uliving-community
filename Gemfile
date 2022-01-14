@@ -40,6 +40,13 @@ gem 'active_link_to'
 gem 'carrierwave', '~> 2.0'
 gem 'fog-aws'
 
+# add admin panel
+gem 'activeadmin'
+gem 'devise'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
