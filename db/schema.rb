@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_13_205559) do
+ActiveRecord::Schema.define(version: 2022_01_14_104319) do
 
   create_table "ads", force: :cascade do |t|
     t.string "title"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2022_01_13_205559) do
     t.string "photo"
     t.string "studio_number"
     t.string "phone_number"
+    t.boolean "is_admin", default: false
   end
 
   add_foreign_key "bookmarks", "ads"
