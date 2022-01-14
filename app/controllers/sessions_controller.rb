@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new
     # login form
   end
@@ -24,7 +23,6 @@ class SessionsController < ApplicationController
     else
       render "new"
     end
-
   end
 
   def destroy
@@ -35,5 +33,4 @@ class SessionsController < ApplicationController
     # redirect to the log in page
     redirect_to new_session_path
   end
-
 end
