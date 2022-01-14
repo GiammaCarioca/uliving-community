@@ -8,21 +8,19 @@
 
 <%= simple_format @content.body %>
 
-<h2 class="featured">
-  <%= "Featured ads" %>
-  <%= render partial: "ad", collection: @featured_ads %>
-</h2>
+<% if @featured_ads.any? %>
+  <h2 class="featured">
+    <%= "Featured ads" %>
+    <%= render partial: "ad", collection: @featured_ads %>
+  </h2>
+<% end %>
 
-<h2 class="latest">
-  <%= "Latest ads from your community" %>
-  <%= render partial: "ad", collection: @latest_ads %>
-</h2>
-
-<!--
-<h2 class="bookmarks">
-  <%= "Your bookmarks" %>
-</h2>
--->
+<% if @latest_ads.any? %>
+  <h2 class="latest">
+    <%= "Latest ads from your community" %>
+    <%= render partial: "ad", collection: @latest_ads %>
+  </h2>
+<% end %>
 
 <p class="more-ads">
   <%= link_to "See all the ads", ads_path %>
