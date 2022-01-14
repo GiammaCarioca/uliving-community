@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resource :account
 
-  root "ads#index"
+  get "about", to: "pages#about"
 
+  root "ads#index"
 end
