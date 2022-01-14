@@ -31,6 +31,10 @@
         </div>
 
         <div class="nav-actions logout">
+          <% if @current_user.is_admin? %>
+            <%= link_to "Admin", admin_root_path %>
+          <% end %>
+
           <%= link_to "New ad", new_ad_path %>
           
           <%= link_to "Edit account", edit_account_path %>

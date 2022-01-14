@@ -294,7 +294,15 @@ h3 {
 	}
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 820px) {
+	header {
+		.navbar a {
+			font-size: 1rem;
+		}
+	}
+}
+
+@media screen and (max-width: 720px) {
 	header {
 		.login, .logout {
 			display: flex;
