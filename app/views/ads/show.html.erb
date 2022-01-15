@@ -47,7 +47,9 @@
     </div>
   <% end %>
 
-  <h3>Bookmarked by...</h3>
+  <% if @ad.bookmarks.any? %>
+    <h3>Bookmarked by...</h3>
+  <% end %>
 
   <ul>
     <% @ad.bookmarks.each do |bookmark| %>

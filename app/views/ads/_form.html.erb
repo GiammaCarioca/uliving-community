@@ -1,8 +1,8 @@
 <%= simple_form_for @ad do |f| %>
 
   <div class="ad-info">
-    <%= f.input :category, label: "Pick a category", :as => :select,
-      :collection =>  [['Looking for/ I wanna learn', :request], ['I\'m offering/ I can teach you', :offer]] %>
+    <%= f.input :category, label: "What you looking for?", :include_blank => "Choose a category", :as => :select,
+      :collection =>  [["I wanna learn", :request], ["I can help/teach", :offer]] %>
     <%= f.input :title %>
     <%= f.input :body, label: "Your message" %>
   </div>
