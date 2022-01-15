@@ -251,6 +251,23 @@ h3 {
 	display: inline;
 }
 
+.phone_number a {
+		display: inline-block;
+		margin-top: 16px;
+		color: $orange;
+		background-color: transparent;
+		text-decoration: none;
+		padding: 8px 16px;
+		border-radius: 6px;
+		border: solid 2px $orange;
+		font-size: 1.4rem;
+
+	&:hover {
+		color: $white;
+		background-color: $orange;
+	}
+}
+
 @media screen and (max-width: 1200px) {
 	header {
 		h2 {

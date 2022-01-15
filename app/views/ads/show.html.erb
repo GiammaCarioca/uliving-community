@@ -32,7 +32,9 @@
   </div>
 
   <div class="studio">
-    From studio <%= @ad.user.studio_number %>
+    <% if @ad.user.studio_number.present? %>
+      From studio <%= @ad.user.studio_number %>
+    <% end %>
   </div>
 
   <div class="textarea">
@@ -41,7 +43,7 @@
 
   <% if @ad.user.phone_number.present? %>
     <div class="phone_number">
-      My phone number is: <%= @ad.user.phone_number %>
+      <a href="https://api.whatsapp.com/send?phone=<%= @ad.user.phone_number %>" target="_blank" rel="noopener noreferrer">Send Message Via Whatsapp</a>
     </div>
   <% end %>
 
