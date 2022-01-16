@@ -15,7 +15,7 @@
     <p>About me: <%= @user.description %></p>
   <% end %>
 
-  <%= if @user.birthday_date.present? %>
+  <% if @user.birthday_date.present? %>
     <p>My bday: <%= @user.birthday_date.strftime("%d %B, %Y") %></p>
   <% end %>
 
