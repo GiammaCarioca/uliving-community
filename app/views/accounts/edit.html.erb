@@ -5,14 +5,19 @@
 <%= simple_form_for @current_user, url: account_path do |f| %>
   <%= f.input :username %>
   <%= f.input :email %>
-  <%= f.input :studio_number, label: "Studio number" %>
-  <%= f.input :phone_number, label: "Whatsapp" %>
-  <%= f.input :photo %>
+
+  <%= f.input :real_name, label: "Your Name" %>
+  <%= f.input :description, label: "Your Description" %>
+  <%= f.input :birthday_date, start_year: 1950, label: "Your Birthday" %>
+  <%= f.input :phone_number, label: "Your Whatsapp" %>
+
+  <%= f.input :studio_number, label: "Studio" %>
+  <%= f.input :photo, label: "Wallpaper" %>
 
   <%= f.button :submit, "Update account" %>
 <% end %>
 
- <% if @current_user %>
+<% if @current_user %>
   <div class="actions">
     <%= link_to "Delete this account", account_path(@current_user), method: :delete, data: { confirm: "Are you sure?" } %>
   </div>

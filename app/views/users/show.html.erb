@@ -10,4 +10,7 @@
   <% end %>
 </div>
 
-<p>Their email is <%= @user.email %></p>
+<div class="more-info">
+  <p>About me: <%= @user.description %></p>
+  <p>My bday: <%= @user.birthday_date.strftime("%d %B, %Y") %></p>
+</div>

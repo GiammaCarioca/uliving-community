@@ -31,6 +31,6 @@ class AccountsController < ApplicationController
   end
 
   def form_params
-    params.require(:user).permit(:username, :email, :studio_number, :phone_number, :photo)
+    params.require(:user).permit(:real_name, :username, :email, :studio_number, :phone_number, :photo, :description, :birthday_date)
   end
 end
