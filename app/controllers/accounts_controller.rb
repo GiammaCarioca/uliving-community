@@ -1,5 +1,4 @@
 class AccountsController < ApplicationController
-
   before_action :check_login
 
   def show
@@ -7,7 +6,6 @@ class AccountsController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update
@@ -18,8 +16,21 @@ class AccountsController < ApplicationController
     render "edit"
   end
 
+  def destroy
+    # destroy if they have access
+    if @current_user.present? and not @current_user.is_admin?
+
+      # remove the session completely
+      reset_session
+
+      @current_user.destroy
+    end
+
+    # redirect to the home page
+    redirect_to root_path
+  end
+
   def form_params
     params.require(:user).permit(:username, :email, :studio_number, :phone_number, :photo)
   end
-
 end

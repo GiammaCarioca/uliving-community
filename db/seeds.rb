@@ -8,8 +8,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-Page.destroy_all
 
 User.create([{ username: "admin", email: "hey@giammattey.com", is_admin: true, password: "admin123", password_confirmation: "admin123" }, { username: "giamma", email: "giammattey@gmail.com", is_admin: true, password: "12345", password_confirmation: "12345", studio_number: "301", phone_number: "5521975575574" }, { username: "fulano", email: "fulano@uliving.com", is_admin: false, password: "12345", password_confirmation: "12345", studio_number: "236" }, { username: "beltrano", email: "beltrano@uliving.com", is_admin: false, password: "12345", password_confirmation: "12345", studio_number: "336" }, { username: "cicrano", email: "cicrano@uliving.com", is_admin: false, password: "12345", password_confirmation: "12345", studio_number: "436" }]).save
-
-Page.create([{ title: "Home", body: "Welcome to Uliving Rio's Bulletin Board", url: "home" }, { title: "About", body: "This is Uliving Rio's Bulletin Board", url: "about" }]).save
