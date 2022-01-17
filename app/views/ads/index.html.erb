@@ -4,6 +4,7 @@
   <%= active_link_to "All Ads", ads_path, active: { category: nil } %>
   <%= active_link_to "Requests", ads_path(category: "request"), active: { category: "request" } %>
   <%= active_link_to "Offers", ads_path(category: "offer"), active: { category: "offer" } %>
+  <%= active_link_to "Exchanges", ads_path(category: "exchange"), active: { category: "exchange" } %>
 </nav>
 
 <% @ads.each do |ad| %>

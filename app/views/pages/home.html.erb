@@ -1,27 +1,38 @@
 <% content_for :page_title, "Home" %>
 
-<% if @content.image.present? %>
-  <%= image_tag @content.image.url %>
-<% end %>
-
 <h1><%= @content.title %></h1>
 
-<%= simple_format @content.body %>
+<div class="wrapper-image">
+  <% if @content.image.present? %>
+    <%= image_tag @content.image.url %>
+  <% end %>
+</div>
+
+<h2>
+  <%= simple_format @content.body %>
+</h2>
 
 <% if @featured_ads.any? %>
-  <h2 class="featured">
+  <h3 class="featured">
     <%= "Featured ads" %>
+  </h3>
+
+  <ul class="featured">
     <%= render partial: "ad", collection: @featured_ads %>
-  </h2>
+  </ul>
+
 <% end %>
 
 <% if @latest_ads.any? %>
-  <h2 class="latest">
+  <h3 class="latest">
     <%= "Latest ads from your community" %>
+  </h3>
+
+  <ul class="latest">
     <%= render partial: "ad", collection: @latest_ads %>
-  </h2>
+  </ul>
 <% end %>
 
 <p class="more-ads">
-  <%= link_to "See all the ads", ads_path %>
+  <%= link_to ">> See all ads", ads_path %>
 </p>

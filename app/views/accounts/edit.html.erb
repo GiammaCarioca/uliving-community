@@ -6,13 +6,13 @@
   <%= f.input :username %>
   <%= f.input :email %>
 
-  <%= f.input :real_name, label: "Your Name" %>
-  <%= f.input :description, label: "Your Description" %>
-  <%= f.input :birthday_date, start_year: 1950, label: "Your Birthday" %>
-  <%= f.input :phone_number, label: "Your Whatsapp" %>
+  <%= f.input :real_name, label: "Name" %>
+  <%= f.input :description, label: "Description" %>
+  <%= f.input :birthday_date, start_year: 1950, label: "Birthday" %>
+  <%= f.input :phone_number, label: "Whatsapp", placeholder: "e.g. 5521999999999", hint: ' Only digits, please.' %>
 
-  <%= f.input :studio_number, label: "Studio" %>
-  <%= f.input :photo, label: "Wallpaper" %>
+  <%= f.input :studio_number, label: "Studio number" %>
+  <%= f.input :photo, label: "Photo" %>
 
   <%= f.button :submit, "Update account" %>
 <% end %>

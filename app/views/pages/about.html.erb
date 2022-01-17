@@ -1,8 +1,10 @@
 <% content_for :page_title, "About" %>
 
-<% if @content.image.present? %>
-  <%= image_tag @content.image.url %>
-<% end %>
+<div class="wrapper-image">
+  <% if @content.image.present? %>
+    <%= image_tag @content.image.url %>
+  <% end %>
+</div>
 
 <h1><%= @content.title %></h1>
 

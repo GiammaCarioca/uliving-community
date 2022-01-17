@@ -27,6 +27,24 @@ h5 {
 	font-family: $titleFont;
 }
 
+h2 {
+	font-size: 2.5rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+.wrapper-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		width: 100%;
+	}
+}
+
 header {
 	padding: 0 32px;
 }
@@ -61,7 +79,7 @@ header {
 	}
 
 	h2 {
-		font-size: 2.5rem;
+		font-size: 2rem;
 	}
 
 	.username {
@@ -209,10 +227,6 @@ nav.filters {
 	}
 }
 
-h3 {
-	font-size: 2rem;
-}
-
 .ad-info {
 	label {
 		margin-top: 8px;
@@ -265,6 +279,25 @@ h3 {
 	&:hover {
 		color: $white;
 		background-color: $orange;
+	}
+}
+
+ul.featured, ul.latest {
+	margin-top: -1.2rem;
+}
+
+li.latest-ad-item a {
+	text-decoration: none;
+	font-size: 1.4rem;
+}
+
+p.more-ads {
+	margin-top: 2rem;
+	
+	a {
+		color: $orange;
+		text-decoration: none;
+		text-transform: uppercase;
 	}
 }
 

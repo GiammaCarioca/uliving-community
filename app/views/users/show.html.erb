@@ -1,6 +1,8 @@
 <% content_for :page_title, @user.username %>
 
-<%= image_tag @user.photo.medium.url %>
+<div class="wrapper-image">
+  <%= image_tag @user.photo.medium.url %>
+</div>
 
 <div class="user-list-item">
   <h2><%= @user.username %></h2>
