@@ -1,6 +1,13 @@
 <% content_for :page_title, "All users" %>
 
-<h2>All users</h2>
+<nav class="filters">
+  <%= active_link_to "All users", users_path, active: { studio_number: nil } %>
+
+  <%= simple_form_for '', method: :get do |f| %>
+    <%= f.input :studio_number, label: false, placeholder: "search by studio" %>
+  <% end %>
+
+</nav>
 
 <% @users.each do |user| %>
 

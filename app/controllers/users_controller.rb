@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @studio = params[:studio_number]
+
+    if @studio.present?
+      #filter by studio 
+      @users = User.where(studio_number: @studio)
+    else
+      @users = User.all
+    end
+
   end
 
   def show

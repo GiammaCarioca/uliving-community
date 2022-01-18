@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   resource :account
 
   get "about", to: "pages#about"
-
+  
   root "pages#home"
 end
