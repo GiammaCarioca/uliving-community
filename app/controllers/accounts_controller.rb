@@ -13,7 +13,7 @@ class AccountsController < ApplicationController
       flash[:success] = "Account updated successfully!"
     end
 
-    render "edit"
+    redirect_to user_path(@current_user)
   end
 
   def destroy

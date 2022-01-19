@@ -35,13 +35,41 @@ h3 {
 	font-size: 2rem;
 }
 
-.wrapper-image {
+.profile-card {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+}
 
+.profile-info {
+	display: flex;
+	flex-direction: column;
+	margin-right: 2rem;
+	width: 50%;
+}
+
+.more-info {
+	.description {
+		color: $black;
+	}
+
+	.label-info {
+		font-weight: bold;
+	}
+}
+
+.wrapper-image {
 	img {
 		width: 100%;
+	}
+
+	&.home {
+		align-items: center;
+		justify-content: center;
+	}
+
+	&.profile-image {	
+		margin-top: 1rem;
+		align-items: flex-end;
+		justify-content: flex-end;
 	}
 }
 
@@ -88,7 +116,7 @@ header {
 	}
 
 	// button-like
-	.navbar a {
+	.navbar .nav-actions a {
 		color: $orange;
 		background-color: transparent;
 		text-decoration: none;
@@ -98,9 +126,20 @@ header {
 		font-size: 1.4rem;
 	}
 
-	.navbar a:hover {
+	.navbar .nav-actions a:hover {
 		color: $white;
 		background-color: $orange;
+	}
+
+	.navbar .username a {
+		color: #f1f1f1;
+		text-decoration: none;
+		padding: 8px 4px;
+		font-size: 1.4rem;
+	}
+
+	.navbar .username a:hover {
+		color: $orange;
 	}
 }
 
@@ -114,6 +153,23 @@ header {
 	border: solid 2px $orange;
 	font-size: 1rem;
 }
+
+
+// button-like
+	.edit-profile-cta a {
+		color: $orange;
+		background-color: transparent;
+		text-decoration: none;
+		padding: 8px 16px;
+		border-radius: 6px;
+		border: solid 2px $orange;
+		font-size: 1.4rem;
+
+		&:hover {
+			color: $white;
+			background-color: $orange;
+		}
+	}
 
 main {
 	min-height: calc(100vh - 150px);
@@ -370,6 +426,24 @@ p.more-ads {
 
 	.show-ad-title {
 		font-size: 1.4rem;
+	}
+
+	.profile-card {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.profile-info {
+		margin-right: 0rem;
+		max-width: 100%;
+		order: 2;
+	}
+
+	.wrapper-image {
+		&.profile-image {	
+			margin-top: 1rem;
+			order: 1;
+		}
 	}
 }
 

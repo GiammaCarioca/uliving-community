@@ -1,0 +1,14 @@
+<% content_for :page_title, "Edit profile" %>
+
+<h2>Edit profile</h2>
+
+<%= simple_form_for @current_user, url: user_path do |f| %>
+  <%= f.input :real_name, label: "Name" %>
+  <%= f.input :studio_number, label: "Studio number" %>
+  <%= f.input :birthday_date, start_year: 1950, label: "Birthday" %>
+  <%= f.input :phone_number, label: "Whatsapp", placeholder: "e.g. 5521999999999", hint: ' Only digits, please.' %>
+  <%= f.input :description, label: "Description" %>
+  <%= f.input :photo, label: "Photo" %>
+
+  <%= f.button :submit, "Update profile" %>
+<% end %>

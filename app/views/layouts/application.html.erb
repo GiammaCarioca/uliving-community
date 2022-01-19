@@ -27,7 +27,9 @@
         <% if is_logged_in? %>
 
         <div class="username">
-          <%= @current_user.username %>
+          <% if @current_user.username %>
+            <%= link_to @current_user.username, user_path(@current_user) %>
+          <% end %>
         </div>
 
         <div class="nav-actions logout">
