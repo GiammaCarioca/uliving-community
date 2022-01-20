@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :real_name, :username, :email, :password_confirmation, :photo, :studio_number, :phone_number, :is_admin, :birthday_date, :description
+  permit_params :real_name, :username, :email, :password_confirmation, :photo, :studio_number, :phone_number, :is_admin, :birthday_date, :description, group_ids: []
 
   index do
     selectable_column
@@ -11,6 +11,7 @@ ActiveAdmin.register User do
     column :studio_number
     column :email
     column :is_admin
+    column :groups
     actions
   end
 
@@ -22,6 +23,7 @@ ActiveAdmin.register User do
       f.input :birthday_date
       f.input :description
       f.input :photo
+      f.input :groups, as: :check_boxes, collection: Group.order("name asc")
     end
 
     f.inputs "Account info" do

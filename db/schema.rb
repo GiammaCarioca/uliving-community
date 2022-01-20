@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_16_200357) do
+ActiveRecord::Schema.define(version: 2022_01_20_135732) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -54,6 +54,21 @@ ActiveRecord::Schema.define(version: 2022_01_16_200357) do
     t.index ["ad_id"], name: "index_comments_on_ad_id"
   end
 
+  create_table "group_users", force: :cascade do |t|
+    t.integer "group_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_group_users_on_group_id"
+    t.index ["user_id"], name: "index_group_users_on_user_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "pages", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -81,4 +96,6 @@ ActiveRecord::Schema.define(version: 2022_01_16_200357) do
   add_foreign_key "bookmarks", "ads"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "comments", "ads"
+  add_foreign_key "group_users", "groups"
+  add_foreign_key "group_users", "users"
 end

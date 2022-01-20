@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :ads, dependent: :destroy
   has_many :comments
   has_many :bookmarks, dependent: :destroy
+  has_many :group_users
+  has_many :groups, through: :group_users
 
   has_secure_password
 

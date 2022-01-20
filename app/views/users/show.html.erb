@@ -27,6 +27,15 @@
     <% if @user.photo.medium.url.present? %>
       <%= image_tag @user.photo.medium.url %>
     <% end %>
+
+    <% if @user.groups.any? %>
+
+      <% @user.groups.each do |group| %>
+        <p><%= link_to group.name, group_path(group) %></p>
+      <% end %>
+
+    <% end %>
+
   </div>
 
 </div>

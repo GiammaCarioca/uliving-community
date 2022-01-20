@@ -1,0 +1,9 @@
+<% content_for :page_title, "Groups" %>
+
+<h2>Groups</h2>
+
+<% @groups.each do |group| %>
+
+  <p><%= link_to group.name, group_path(group) %></p>
+
+<% end %>
