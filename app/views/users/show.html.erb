@@ -43,3 +43,20 @@
 <div class="edit-profile-cta">
   <%= link_to "Edit profile", edit_user_path %>
 </div>
+
+<h3>Testimonials</h3>
+
+<% if @user != @current_user %>
+  <ul class="testimonials">
+    <%= render partial: "testimonials/testimonial", collection:  @testimonials = Testimonial.where("receiver_id", @user.id).includes(:author), as: :testimonial %>
+  </ul>
+<% end %>
+
+<h3>Write a testimonial</h3>
+
+<%= simple_form_for [@user, Testimonial.new] do |f| %>
+
+  <%= f.input :body, label: "Your testimonial" %>
+  <%= f.button :submit, "Add comment" %>
+
+<% end %>

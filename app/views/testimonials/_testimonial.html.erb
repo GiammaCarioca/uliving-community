@@ -1,0 +1,8 @@
+<% unless @user.id != testimonial.receiver_id %>
+
+  <li class="testimonial">
+    <p><%= testimonial.body %></p>
+    <p><%= testimonial.author.username %></p>
+  </li>
+
+<% end %>

@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :group_users
   has_many :groups, through: :group_users
 
+  has_many :author_testimonials, class_name: 'Testimonial', foreign_key: 'author_id'
+  has_many :receiver_testimonials, class_name: 'Testimonial', foreign_key: 'receiver_id'
+
   has_secure_password
 
   # add the photo uploader

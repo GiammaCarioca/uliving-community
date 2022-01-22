@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   end
 
   # users could sign up multiple times
-  resources :users
+  resources :users do
+    resources :testimonials
+  end
 
   # users can only make one session
   resource :session

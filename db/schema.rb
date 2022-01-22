@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_135732) do
+ActiveRecord::Schema.define(version: 2022_01_22_004307) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -78,6 +78,16 @@ ActiveRecord::Schema.define(version: 2022_01_20_135732) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "testimonials", force: :cascade do |t|
+    t.text "body"
+    t.integer "author_id", null: false
+    t.integer "receiver_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_testimonials_on_author_id"
+    t.index ["receiver_id"], name: "index_testimonials_on_receiver_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "real_name"
     t.string "username"
@@ -98,4 +108,6 @@ ActiveRecord::Schema.define(version: 2022_01_20_135732) do
   add_foreign_key "comments", "ads"
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+  add_foreign_key "testimonials", "users", column: "author_id"
+  add_foreign_key "testimonials", "users", column: "receiver_id"
 end
