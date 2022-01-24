@@ -48,7 +48,7 @@
   <h3>Testimonials</h3>
 
     <ul class="testimonials">
-      <%= render partial: "testimonials/testimonial", collection:  @testimonials = Testimonial.where("receiver_id", @user.id).includes(:author), as: :testimonial %>
+      <%= render partial: "testimonials/testimonial", collection:  @testimonials = Testimonial.where(:receiver_id => @user.id).includes(:author), as: :testimonial %>
     </ul>
 <% end %>
 
