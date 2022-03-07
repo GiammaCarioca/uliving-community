@@ -1,7 +1,5 @@
 class CommentsController < ApplicationController
-
   def create
-
     @ad = Ad.find(params[:ad_id])
 
     @comment = @ad.comments.new(params.require(:comment).permit(:body))
@@ -10,11 +8,9 @@ class CommentsController < ApplicationController
 
     @comment.save
 
-    flash[:success] = "Your comment was posted!"
+    flash[:success] = 'Your comment was posted!'
 
     # go back to the ad show page
     redirect_to ad_path(@ad)
-
   end
-
 end

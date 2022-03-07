@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   # before any page loads, find the current_user
   before_action :find_current_user
 
@@ -7,18 +6,12 @@ class ApplicationController < ActionController::Base
   helper_method :is_logged_in?
 
   def find_current_user
-    if is_logged_in?
-      @current_user = User.find(session[:user_id])
-    else
-      @current_user = nil
-    end
+    @current_user = (User.find(session[:user_id]) if is_logged_in?)
   end
 
   # check login status
   def check_login
-    unless is_logged_in?
-      redirect_to new_session_path
-    end
+    redirect_to new_session_path unless is_logged_in?
   end
 
   # is the person logged in
@@ -30,19 +23,13 @@ class ApplicationController < ActionController::Base
   def check_admin
     @user = find_current_user
 
-    unless @user.present? and @user.is_admin?
-      redirect_to root_path
-    end
+    redirect_to root_path unless @user.present? && @user.is_admin?
   end
 
   # find admin user
   def find_admin_user
     @current_user = find_current_user
 
-    if @current_user.present? and @current_user.is_admin?
-      @current_user
-    else
-      nil
-    end
+    @current_user if @current_user.present? && @current_user.is_admin?
   end
 end

@@ -2,12 +2,12 @@ class UsersController < ApplicationController
   def index
     @studio = params[:studio_number]
 
-    if @studio.present?
-      #filter by studio
-      @users = User.where(studio_number: @studio)
-    else
-      @users = User.all
-    end
+    @users = if @studio.present?
+               # filter by studio
+               User.where(studio_number: @studio)
+             else
+               User.all
+             end
   end
 
   def show
@@ -34,22 +34,18 @@ class UsersController < ApplicationController
 
       redirect_to users_path
     else
-      render "new"
+      render 'new'
     end
   end
 
   def edit
     @user = User.find_by(username: params[:id])
 
-    if @user != @current_user
-      redirect_to root_path
-    end
+    redirect_to root_path if @user != @current_user
   end
 
   def update
-    if @current_user.update(profile_form_params)
-      flash[:success] = "Profile updated successfully!"
-    end
+    flash[:success] = 'Profile updated successfully!' if @current_user.update(profile_form_params)
 
     redirect_to user_path(@current_user)
   end

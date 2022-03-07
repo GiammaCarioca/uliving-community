@@ -1,5 +1,4 @@
 class BookmarksController < ApplicationController
-
   before_action :check_login
 
   def create
@@ -13,17 +12,13 @@ class BookmarksController < ApplicationController
 
     # go back to the review page
     redirect_to ad_path(@ad)
-
   end
 
   def destroy
-    
     @ad = Ad.find(params[:ad_id])
 
     @ad.bookmarks.where(user: @current_user).delete_all
 
     redirect_to ad_path(@ad)
-
   end
-
 end

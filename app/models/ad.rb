@@ -1,5 +1,4 @@
 class Ad < ApplicationRecord
-
   # add an association that has a 1-to-many relationship
   has_many :comments, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
@@ -12,7 +11,6 @@ class Ad < ApplicationRecord
   validates :category, presence: true
 
   def to_param
-    id.to_s + "-" + title.parameterize
+    id.to_s + '-' + title.parameterize
   end
-  
 end

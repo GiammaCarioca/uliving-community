@@ -9,7 +9,7 @@ class TestimonialsController < ApplicationController
 
     @testimonial.save
 
-    flash[:success] = "Your testimonial was posted!"
+    flash[:success] = 'Your testimonial was posted!'
 
     # go back to the user show page
     redirect_to user_path(@user)

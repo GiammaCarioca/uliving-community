@@ -1,16 +1,13 @@
 class AdsController < ApplicationController
-
   def index
-
     @category = params[:category]
 
-    if @category.present?
-      #filter by category (request or offer)
-      @ads = Ad.where(category: @category)
-    else
-      @ads = Ad.all
-    end
-
+    @ads = if @category.present?
+             # filter by category (request or offer)
+             Ad.where(category: @category)
+           else
+             Ad.all
+           end
   end
 
   def new
@@ -24,14 +21,13 @@ class AdsController < ApplicationController
     @ad.user = @current_user
 
     if @ad.save
-      flash[:success] = "Your ad was posted!"
+      flash[:success] = 'Your ad was posted!'
 
       redirect_to root_path
     else
       # show the view for new.html.erb
-      render "new"
+      render 'new'
     end
-
   end
 
   def show
@@ -45,7 +41,7 @@ class AdsController < ApplicationController
     if @ad.user == @current_user
       @ad.destroy
 
-      flash[:success] = "Ad deleted successfully!"
+      flash[:success] = 'Ad deleted successfully!'
     end
 
     # redirect to the home page
@@ -55,10 +51,7 @@ class AdsController < ApplicationController
   def edit
     @ad = Ad.find(params[:id])
 
-    if @ad.user != @current_user
-      redirect_to root_path
-    end
-
+    redirect_to root_path if @ad.user != @current_user
   end
 
   def update
@@ -66,20 +59,16 @@ class AdsController < ApplicationController
 
     if @ad.user != @current_user
       redirect_to root_path
+    elsif @ad.update(form_params)
+      flash[:success] = 'Ad updated successfully!'
+
+      redirect_to ad_path(@ad)
     else
-      if @ad.update(form_params)
-        flash[:success] = "Ad updated successfully!"
-
-        redirect_to ad_path(@ad)
-      else
-        render "edit"
-      end
+      render 'edit'
     end
-
   end
 
   def form_params
     params.require(:ad).permit(:title, :body, :category)
   end
-
 end
